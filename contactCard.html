@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Coding Dojo Assignment: Contact Card</title>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$(document).on("submit", function(){
+					var first = $("#firstName input:text").val()
+					var last = $("#lastName input:text").val()
+					var description = $("textarea").val()
+					var info = "<div>"
+					info = info + "<h2>"+ first + " " + last +"</h2><p>" + description + "</p></div>"
+					//Append contact information
+					$(".card-sec").append(info)
+
+					/*Alternate between name and description when clicked
+					  Will update functionality at a later date*/
+
+					  //Hide description information
+  					//$(".card-sec div p").hide()
+
+					/*$(".card-sec div").click(function(){
+						event.stopPropagation();
+						$(this).slideUp("slow", function(){
+							if($(this).children("h4").css("display") == "none"){
+								$(this).children("h2").hide()
+								$(this).children("p").hide()
+								$(this).children("h4").show()
+							}
+							else if($(this).children("h2").css("display") == "none"){
+								$(this).children("h2").show()
+								$(this).children("p").show()
+								$(this).children("h4").hide()
+							}
+							$(this).slideDown("fast", function(){
+								//Some JS here
+							})
+						})
+					})*/
+
+					//CSS styling for card information
+					var border = "1px solid black"
+					$(".card-sec div").css("border", border)
+					$(".card-sec div").css("padding", "20px")
+					$(".card-sec div").css("margin-top", "20px")
+					$("input:text").val(null)
+					$("#description").val(null)
+
+					return false
+				})
+			})
+		</script>
+		<style media="screen">
+
+		</style>
+
+		<meta name="description" content="Contact card page where the user can input information for contacts and append it to the page">
+		<link rel="stylesheet" type="text/css" href="contactCard.css">
+
+	</head>
+	<body>
+		<div class="wrapper">
+			<form>
+				<label id="firstName">First Name:<input type="text" name="firstName" placeholder="First Name"></label>
+				<label id="lastName">Last Name:<input type="text" name="lastName" placeholder= "Last Name"></label>
+				<label>Description: <textarea rows="8" cols="19" id=description name="description" placeholder="Enter Description:"></textarea>
+				<input type="submit" value="Add User"></label>
+			</form>
+			<div class="card-sec"></div>
+		</div>
+	</body>
+</html>

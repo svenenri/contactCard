@@ -1,0 +1,29 @@
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+form, .card-sec{
+	display: inline-block;
+	vertical-align: top;
+	width: 48%;
+}
+
+	form label, form input, textarea{
+		display: block;
+		margin-bottom: 10px;
+	}
+
+form{
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+h4{
+	font-weight: normal;
+}
+
+textarea{
+	resize: none;
+}
